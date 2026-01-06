@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kobra Menu</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: transparent;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        #menu-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90vw;
+            max-width: 1200px;
+            height: 90vh;
+            max-height: 800px;
+            overflow: hidden;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid red;
+            border-radius: 10px;
+        }
+
+        #header {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        #breadcrumb {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+
+        #categories, #elements {
+            width: 100%;
+            box-sizing: border-box;
+            overflow-y: auto;
+            max-height: 80vh;
+            padding: 10px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        /* For menu items / options */
+        .element-item, .category-item, .tab {
+            padding: 8px 12px;
+            margin: 4px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        /* Optional: make sure long text doesn't break layout */
+        .element-item {
+            cursor: pointer;
+        }
+
+        .element-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Keyboard input styling */
+        #keyboardContainer {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border: 2px solid red;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        #keyboardInput {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="menu-container" class="hidden">
+    <div id="header">
+        <span id="logo-text">JayMods</span>
+    </div>
+    <img src="https://jaythaagamer.simdif.com/images/th/sd_6935ae44db1fd.png?no_cache=1765129304" alt="Kobra Banner">
+    <div id="breadcrumb"></div>
+    <div id="categories"></div>
+    <div id="elements"></div>
+</div>
+<div id="notifications"></div>
+<div id="keyboardContainer">
+    <h2 id="keyboardTitle">Input</h2>
+    <input type="text" id="keyboardInput" readonly>
+</div>
+<script src="ui.js"></script>
+</body>
+</html>
